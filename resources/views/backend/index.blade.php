@@ -13,7 +13,7 @@
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-social-info"></i></div>
-                        <h4 class="list-group-item-heading">Manage User</h4>
+                        <h4 class="list-group-item-heading">Manage Users</h4>
                         <a href="/admin/users" class="btn btn-default btn-raised">All Users</a>
                     </div>
                 </div>       

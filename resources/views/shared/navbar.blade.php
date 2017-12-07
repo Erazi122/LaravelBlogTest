@@ -1,3 +1,4 @@
+<header>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -8,15 +9,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{!! action('HomeController@index') !!}">Learning Laravel</a>
+            <a class="navbar-brand" href="{!! action('BlogController@index') !!}">Blog</a>
         </div>
             <div class="collapse navbar-collapse" id="example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/tickets/create">Contact Us</a></li>
-                    <li><a href="/tickets">List All Tickets</a></li>
-                    <li><a href="/blog">Blog</a></li>
+                <ul class="nav navbar-nav navbar-right">                    
+                    <li><a href="/tickets/create">Contact Us</a></li>    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             @if (Auth::check()) 
@@ -32,13 +29,15 @@
                             @if (Auth::user()->hasRole('admin'))
                                <li>
                                     <a href="/admin">Admin Control Panel</a>
-                               </li>     
+                               </li>
+                               <li><a href="/tickets">List Tickets</a></li>     
                             @endif  
                             <hr>                       
                             <li>                                
-                                <a href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
+                                <a href="{{ route('logout') }}" onclick="$(function(e) {
+                                        event.preventDefault();
+                                        document.getElementById('logout-form').submit();
+                                    })">                            
                                     Logout
                                 </a>
                             </li>
@@ -57,3 +56,4 @@
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
+</header>

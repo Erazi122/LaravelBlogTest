@@ -1,0 +1,31 @@
+.navbar {    
+    background-color: #74c3f1;
+    width: 100%;    
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar-logo {
+    font-size: 36px;
+}
+
+.navbar-body {
+    display: inline;
+}
+
+.navbar-body {
+    ul {
+        list-style: none;
+    }
+    li {
+        display: inline;        
+    }
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.dropdown-content 

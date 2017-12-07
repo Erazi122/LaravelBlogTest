@@ -481,6 +481,10 @@ a {
   text-decoration: none;
 }
 
+a.active:hover, a.active:hover:hover, a.active:hover:active, a.active:hover:focus {
+  cursor: none;
+}
+
 a:link {
   color: #2A5DB0;
   font-weight: normal;
@@ -490,6 +494,10 @@ a:link {
 a:link:hover, a:link:active, a:link:focus {
   color: #636b6f;
   text-decoration: underline;
+}
+
+.myModal {
+  visibility: hidden;
 }
 
 /**

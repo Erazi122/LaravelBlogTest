@@ -12,10 +12,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-Route::get('/about', 'HomeController@about');
-
-Route::get('/blog', 'BlogController@index');
+Route::get('/', 'BlogController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/tickets', 'TicketController@index');
@@ -35,21 +32,6 @@ Route::group(['middleware' => 'admin'], function() {
     Route::delete('/tickets/{slug}', 'TicketController@destroy');
 });
 
-// Route::get('/sendemail', function () {
-//     $data = [
-//         'name' => 'Learning Laravel'
-//     ];
-
-//     Mail::send('emails.welcome', $data, function ($message) {
-//         $message->from('bal.wladimir@gmail.com', 'Learning Laravel');
-//         $message->to('bal.wladimir@gmail.com')->subject('Learning Laravel');
-//     });
-
-//     return 'Your email has been sent successfully';
-// });
-
-// Route::get('users/register', '\Auth\AuthController@getRegister');
-
 //Auth::routes(); // === Route::auth(); 
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
@@ -62,8 +44,6 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.request');
-
-Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'admin'], function() {
 

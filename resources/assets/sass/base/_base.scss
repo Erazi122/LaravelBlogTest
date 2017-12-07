@@ -31,6 +31,12 @@ a {
   text-decoration: none;
 }
 
+a.active:hover {
+  @include on-event(true) {
+    cursor: none;
+  }
+}
+
 a:link {
   color: $link-color;
   font-weight: normal;
@@ -40,4 +46,8 @@ a:link {
     color: $text-color;
     text-decoration: underline;
   }
+}
+
+.myModal {
+  visibility: hidden;
 }

@@ -20,11 +20,11 @@
     @foreach($comments as $comment)
         <div class="well well bs-component">
             <div class="content">
-                {!! $comment->content !!}
-                <div class="pull-right">
-                    | by <strong>{!! $comment->user->name !!}</strong> at   
-                    {!! $comment->created_at->toDateTimeString() !!}
-                </div>
+                <strong>{!! $comment->user->name !!}</strong> at   
+                {!! $comment->created_at->toDateTimeString() !!}
+            </div>
+            <div class="content">
+                {!! $comment->content !!}                
             </div>
         </div>
     @endforeach

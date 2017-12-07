@@ -9,7 +9,7 @@
             <h2> List of all categories </h2>
         </div>
 
-        @include('shared.success')
+        @include('shared.errors')
 
         @if ($categories->isEmpty())
             <p> There is no category.</p>

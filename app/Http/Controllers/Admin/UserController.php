@@ -62,7 +62,7 @@ class UserController extends Controller
     {        
         $roles = Role::all();
         $selectedRoles = $user->roles->pluck('id')->toArray();        
-        return view('backend.users.edit', compact('user', 'roles', 'selectedRoles'));
+        return view('backend.users.edit-modal', compact('user', 'roles', 'selectedRoles'));
     }
 
     /**
@@ -82,9 +82,9 @@ class UserController extends Controller
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
-        $password = $request->input('password');
+        $password = $request->input('password');        
 
-        if($password !== '') {
+        if (!empty($password)) {
             $user->password = bcrypt($password);
         }
         

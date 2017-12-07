@@ -21,6 +21,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Joined at</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,15 +29,16 @@
                         <tr>
                             <td>{!! $user->id !!}</td>
                             <td>
-                                <a href="{{ action('Admin\UserController@edit', $user->id) }}">{!! $user->name !!} </a>
+                                {!! $user->name !!} 
                             </td>
                             <td>{!! $user->email !!}</td>
                             <td>{!! $user->created_at !!}</td>
+                            <td><a href="{{ action('Admin\UserController@edit', $user->id) }}">Edit</a></td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         @endif
-    </div>
+    </div>   
 </div>   
 @endsection
